@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System;
+using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -64,6 +66,39 @@ namespace KeresztrejtvenyGUI
 
 					mezok.Children.Add(a);
 				}
+			}
+		}
+
+		private void mentes_Click(object sender, RoutedEventArgs e)
+		{
+			List<string> ki = [];
+
+			int ind = (int)indexcb.SelectedItem;
+			int oszlopokSzama = (int)oszlopcb.SelectedItem;
+
+			string sor = "";
+			int sz = 0;
+
+			foreach (var item in mezok.Children)
+			{
+				TextBox a = (TextBox)item;
+				sor += a.Text;
+				sz++;
+				if (sz == oszlopokSzama)
+				{
+					ki.Add(sor);
+					sz = 0;
+					sor = "";
+				}
+			}
+			try
+			{
+				File.WriteAllLines($"kr{ind}.txt", ki);
+				MessageBox.Show("A keresztrejtvény mentése sikeres");
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
 			}
 		}
 	}
