@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeresztrejtvenyGUI"
         mc:Ignorable="d"
-        Title="Keresztrejtvény készítő" Height="400" Width="400">
+        Title="Keresztrejtvény készítő" Height="470" Width="430">
     <Grid>
 		<Label Content="Keresztejtvény mérete [sor x oszlop]:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
 		<ComboBox x:Name="sorcb" HorizontalAlignment="Left" Margin="215,15,0,0" VerticalAlignment="Top" Width="40"/>
 		<ComboBox x:Name="oszlopcb" HorizontalAlignment="Left" Margin="265,15,0,0" VerticalAlignment="Top" Width="40"/>
-		<Button x:Name="letrehozas" Content="Keresztrejtvény létrehozása" HorizontalAlignment="Left" Margin="15,45,0,0" VerticalAlignment="Top"/>
+		<Button x:Name="letrehozas" Content="Keresztrejtvény létrehozása" HorizontalAlignment="Left" Margin="15,45,0,0" VerticalAlignment="Top" Click="letrehozas_Click"/>
 		<Button x:Name="mentes" Content="Keresztrejtvény mentése" HorizontalAlignment="Left" Margin="175,45,0,0" VerticalAlignment="Top"/>
 		<ComboBox x:Name="indexcb" HorizontalAlignment="Left" Margin="320,45,0,0" VerticalAlignment="Top" Width="40"/>
+
+		<Canvas x:Name="mezok" Width="350" Height="350" Margin="0,65,0,0">
+		</Canvas>
 	</Grid>
 </Window>
