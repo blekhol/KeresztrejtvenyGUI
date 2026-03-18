@@ -11,14 +11,25 @@ using System.Windows.Shapes;
 
 namespace KeresztrejtvenyGUI
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-        }
+
+            for (int i = 6; i < 16; i++)
+            {
+                sorcb.Items.Add(i);
+                oszlopcb.Items.Add(i);
+			}
+            sorcb.SelectedItem = 15;
+			oszlopcb.SelectedItem = 15;
+            
+            for (int i = 1; i < 11; i++)
+            {
+                indexcb.Items.Add(i);
+			}
+            indexcb.SelectedItem = 3;
+		}
     }
 }
