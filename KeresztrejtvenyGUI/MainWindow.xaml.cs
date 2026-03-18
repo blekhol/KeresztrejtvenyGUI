@@ -49,6 +49,18 @@ namespace KeresztrejtvenyGUI
 					a.Height = 20;
 					a.TextAlignment = TextAlignment.Center;
 					a.Margin = new Thickness(c * 22, r * 22, 0, 0);
+					a.MaxLength = 1;
+					a.MouseDoubleClick += (s, ev) =>
+					{
+						if (a.Text == "-")
+						{
+							a.Text = "#";
+						}
+						else
+						{
+							a.Text = "-";
+						}
+					};
 
 					mezok.Children.Add(a);
 				}
